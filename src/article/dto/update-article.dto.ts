@@ -15,5 +15,5 @@ export class UpdateArticleDto {
 
   @IsOptional()
   @IsString()
-  readonly author?: string;
+  readonly authorId?: string;
 }

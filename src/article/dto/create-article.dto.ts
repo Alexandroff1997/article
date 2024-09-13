@@ -14,6 +14,5 @@ export class CreateArticleDto {
   readonly publishedDate: Date;
 
   @IsNotEmpty()
-  @IsString()
-  readonly author: string;
+  readonly authorId: number;
 }

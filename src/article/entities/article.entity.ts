@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/user/entities/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
-@Entity('articles')
+@Entity('article')
 export class Article {
   @PrimaryGeneratedColumn()
   id: number;
@@ -12,8 +13,8 @@ export class Article {
   description: string;
 
   @Column()
-  publishedDate: Date;
+  publishedAt: Date;
 
-  @Column()
-  author: string;
+  @ManyToOne(() => User, (user) => user.articles)
+  author: User; // Связь с автором статьи
 }
